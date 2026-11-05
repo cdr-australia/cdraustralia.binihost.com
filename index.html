@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDR Australia | Skills Assessment Report (CDR) Writer for Engineers</title>
+<meta name="description" content="CDRAustralia.Org (CDR Australia) provides skills assessment report writing for engineers and ICT professionals: Engineers Australia CDR, ACS, AACA, CPEng, NER, RPEQ and global registration support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{
+  --navy:#0b1f3a; --navy-2:#13294b; --ink:#16233a; --muted:#5a6a82;
+  --gold:#c8963e; --gold-2:#e2b765; --bg:#f6f4ef; --card:#ffffff; --line:#e4e0d6;
+  --radius:14px; --shadow:0 10px 30px rgba(11,31,58,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:12px}
+.section-head{max-width:700px;margin-bottom:44px}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1.05rem}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,31,58,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
+.logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold-2));display:grid;place-items:center;color:var(--navy);font-weight:700;font-size:.95rem;font-family:Inter,sans-serif}
+.logo small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#9fb0cc;margin-top:-2px}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav a{color:#cdd8ea;font-size:.92rem;font-weight:500;transition:color .2s}
+nav a:hover{color:var(--gold-2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.95rem;border:2px solid transparent;transition:.2s;cursor:pointer;font-family:inherit}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(200,150,62,.22),transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:96px 0 90px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000 30%,transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(226,183,101,.5);color:var(--gold-2);padding:7px 16px;border-radius:999px;font-size:.82rem;font-weight:500;margin-bottom:24px}
+.hero h1{color:#fff;font-size:clamp(2.3rem,5vw,3.8rem);margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--gold-2)}
+.hero p.lead{color:#c3d0e6;font-size:1.12rem;max-width:620px;margin-bottom:34px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.grade-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:34px 30px;text-align:center;backdrop-filter:blur(6px)}
+.grade{width:104px;height:104px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);font-family:Fraunces,serif;font-weight:700;font-size:3.4rem;box-shadow:0 0 0 8px rgba(200,150,62,.2)}
+.grade-card h3{color:#fff;font-size:1.25rem;margin-bottom:8px}
+.grade-card p{color:#b9c8e0;font-size:.92rem}
+
+/* pillars */
+.pillars{margin-top:-46px;position:relative;z-index:2;padding:0}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);border:1px solid var(--line);border-top:4px solid var(--gold)}
+.pillar h3{font-size:1.2rem;margin-bottom:6px}
+.pillar p{color:var(--muted);font-size:.93rem}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.checks{list-style:none;margin-top:20px;display:grid;gap:10px}
+.checks li{padding-left:30px;position:relative;font-weight:500}
+.checks li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--navy);color:var(--gold-2);font-size:.72rem;display:grid;place-items:center}
+.about-panel{background:var(--navy);color:#fff;border-radius:20px;padding:40px;box-shadow:var(--shadow)}
+.about-panel h3{color:#fff;font-size:1.5rem;margin-bottom:12px}
+.about-panel p{color:#b9c8e0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px;font-size:.82rem;color:var(--gold-2)}
+
+/* services */
+#services{background:#fff}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tab{padding:11px 24px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:.92rem;cursor:pointer;font-family:inherit;color:var(--ink);transition:.2s}
+.tab.active,.tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.panel{display:none;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.panel.active{display:grid}
+.svc{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--bg);transition:.2s}
+.svc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--gold)}
+.svc .tag{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.svc h3{font-size:1.18rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.92rem}
+
+/* global */
+.global-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.g-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:14px;align-items:flex-start}
+.g-code{flex:none;min-width:54px;height:54px;padding:0 8px;border-radius:12px;background:var(--navy);color:var(--gold-2);display:grid;place-items:center;font-weight:700;font-size:.78rem;letter-spacing:.03em;text-align:center}
+.g-item h3{font-size:1rem;font-family:Inter,sans-serif;font-weight:600;margin-bottom:3px}
+.g-item p{color:var(--muted);font-size:.86rem;line-height:1.5}
+.g-item .loc{display:block;margin-top:6px;font-size:.78rem;font-weight:600;color:var(--gold)}
+
+/* process */
+#process{background:var(--navy);color:#fff}
+#process h2{color:#fff}
+#process .section-head p{color:#b9c8e0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:28px 24px;background:rgba(255,255,255,.04);counter-increment:s}
+.step::before{content:"0" counter(s);font-family:Fraunces,serif;font-size:2.2rem;color:var(--gold-2);display:block;margin-bottom:10px}
+.step h3{color:#fff;font-size:1.1rem;margin-bottom:8px}
+.step p{color:#b9c8e0;font-size:.9rem}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+.offices{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.office{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.office h3{font-size:1.05rem;margin-bottom:4px}
+.office a{color:var(--navy);font-weight:600}
+.office a:hover{color:var(--gold)}
+.office.hq{grid-column:1/-1;background:var(--navy);color:#fff;border:0}
+.office.hq h3{color:#fff}
+.office.hq p{color:#b9c8e0;font-size:.95rem}
+.office.hq a{color:var(--gold-2)}
+.wa{margin-top:16px;width:100%;justify-content:center;background:#1fa855;color:#fff}
+.wa:hover{background:#188a45}
+form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+form h3{font-size:1.4rem;margin-bottom:18px}
+label{display:block;font-size:.84rem;font-weight:600;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;margin-bottom:16px;background:#fcfbf8;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{min-height:110px;resize:vertical}
+form .btn{width:100%;justify-content:center}
+.fine{font-size:.78rem;color:var(--muted);margin-top:12px;text-align:center}
+
+/* footer */
+footer{background:#071528;color:#9fb0cc;padding:56px 0 28px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h4{color:#fff;font-size:.95rem;margin-bottom:14px;font-family:Inter,sans-serif}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:var(--gold-2)}
+.socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.socials a{border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px;font-size:.82rem}
+.legal{padding-top:24px;font-size:.78rem;line-height:1.6;color:#7d8fae}
+
+@media(max-width:900px){
+  .hero .wrap,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .pillar-grid,.steps{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .menu-btn{display:block}
+  nav ul{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+  nav ul.open{display:flex}
+}
+@media(max-width:560px){
+  .pillar-grid,.steps,.offices{grid-template-columns:1fr}
+  .hero{padding:70px 0 80px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" aria-label="CDR Australia home">
+      <span class="logo-mark"><img src="logo.png" style="max-width: 35px;"></span>
+      <span>CDR Australia<small>CDRAustralia.Org</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#global">Global</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-gold" href="#contact">Get a Free Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">★ Engineers’ Graded ‘A’ CDR Writing Company</span>
+      <h1>Your skills, <em>professionally</em> documented for Engineers Australia & other skill assessment agencies.</h1>
+      <p class="lead"><a href="https://cdraustralia.org/">CDR Australia</a> is a Sydney-based CDR (Competency Demonstration Report) writing company, providing premium technical support for engineers and ICT professionals pursuing migration skills assessment, accreditation and professional registration.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#contact">Start Your Report</a>
+        <a class="btn btn-ghost" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <aside class="grade-card">
+      <div class="grade">A</div>
+      <h3>‘A’ Graded Support</h3>
+      <p>Recognised for excellent support to engineers seeking migration skills assessment and competency assessment for registration or accreditation.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap pillar-grid">
+    <div class="pillar"><h3>Migration</h3><p>Skills assessment reports for Engineers Australia, ACS and AACA.</p></div>
+    <div class="pillar"><h3>Accreditation</h3><p>CPEng by Engineers Australia and RPEng credentialing by APEA.</p></div>
+    <div class="pillar"><h3>Registration</h3><p>NER, RPEQ, RPEV and NSW / ACT professional engineer registration.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About Us</span>
+      <h2>Australia-based, globally minded.</h2>
+      <p>CDR Australia, also known as CDRAustralia.Org, is an Australia-based CDR writing company, graded ‘A’ for its excellent support to engineers looking for migration skills assessment and competency assessment for registration or accreditation.</p>
+      <p>We provide premium technical support services, known as skills assessment report writing, to engineers and ICT professionals for migration, accreditation and registration purposes, with local offices across Australia, Canada, New Zealand and India.</p>
+      <ul class="checks">
+        <li>Engineers and ICT professionals supported</li>
+        <li>Australian, Canadian, New Zealand, UK and African pathways</li>
+        <li>Offices in four countries, one point of contact</li>
+      </ul>
+    </div>
+    <div class="about-panel">
+      <h3>Who we help</h3>
+      <p>Engineers and ICT professionals who need a clear, well-structured competency or skills assessment report for the body assessing them.</p>
+      <div class="chips">
+        <span class="chip">Civil</span><span class="chip">Mechanical</span><span class="chip">Electrical</span>
+        <span class="chip">Electronics</span><span class="chip">Chemical</span><span class="chip">Mining</span>
+        <span class="chip">ICT</span><span class="chip">Architecture</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services Offered</span>
+      <h2>Skills assessment report writing, for every pathway.</h2>
+      <p>Choose a category to see the assessments we support.</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-t="mig">Migration</button>
+      <button class="tab" data-t="acc">Accreditation</button>
+      <button class="tab" data-t="reg">Registration</button>
+    </div>
+
+    <div class="panel active" id="mig">
+      <div class="svc"><span class="tag">EA</span><h3>CDR Writing Services</h3><p>Competency Demonstration Reports for the Engineers Australia (EA) migration skills assessment.</p></div>
+      <div class="svc"><span class="tag">AACA</span><h3>AACA Skills Assessment Report</h3><p>Skills assessment reports for the Architects Accreditation Council of Australia (AACA).</p></div>
+      <div class="svc"><span class="tag">ACS</span><h3>ACS Migration Skills Assessment</h3><p>Migration skills assessment reports for the Australian Computer Society (ACS).</p></div>
+    </div>
+    <div class="panel" id="acc">
+      <div class="svc"><span class="tag">EA</span><h3>CPEng Accreditation</h3><p>Chartered Professional Engineer (CPEng) accreditation by Engineers Australia.</p></div>
+      <div class="svc"><span class="tag">APEA</span><h3>RPEng Credentialing</h3><p>Registered Professional Engineer (RPEng) credentialing by the Association of Professional Engineers Australia (APEA).</p></div>
+    </div>
+    <div class="panel" id="reg">
+      <div class="svc"><span class="tag">EA</span><h3>NER</h3><p>National Engineering Register (NER) by Engineers Australia.</p></div>
+      <div class="svc"><span class="tag">BPEQ</span><h3>RPEQ</h3><p>Registered Professional Engineer of Queensland (RPEQ) by the Board of Professional Engineers of Queensland (BPEQ).</p></div>
+      <div class="svc"><span class="tag">CIBSE</span><h3>RPEV</h3><p>Registered Professional Engineer of Victoria (RPEV), assessed via the Chartered Institution of Building Services Engineers (CIBSE).</p></div>
+      <div class="svc"><span class="tag">IPWEA</span><h3>NSW &amp; ACT Registration</h3><p>Registered Professional Engineer in New South Wales and the ACT, by Government via Institute of Public Works Engineering Australasia (IPWEA) assessment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="global">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Global Reach</span>
+      <h2>Skilled emigration, registration &amp; accreditation worldwide.</h2>
+      <p>Support for engineering and ICT professionals applying to leading assessment bodies around the world.</p>
+    </div>
+    <div class="global-grid">
+      <div class="g-item"><div class="g-code">IEPNG</div><div><h3>Institute of Engineers Papua New Guinea</h3><p>IEPNG assessment</p><span class="loc">Papua New Guinea</span></div></div>
+      <div class="g-item"><div class="g-code">IPENZ</div><div><h3>Institute of Professional Engineers New Zealand</h3><p>KA02 assessment</p><span class="loc">New Zealand</span></div></div>
+      <div class="g-item"><div class="g-code">ECSA</div><div><h3>Engineering Council of South Africa</h3><p>ECSA assessment</p><span class="loc">South Africa</span></div></div>
+      <div class="g-item"><div class="g-code">ERB</div><div><h3>Engineers Registration Board</h3><p>ERB assessment</p><span class="loc">Botswana</span></div></div>
+      <div class="g-item"><div class="g-code">RICS</div><div><h3>Royal Institution of Chartered Surveyors</h3><p>RICS assessment</p><span class="loc">United Kingdom</span></div></div>
+      <div class="g-item"><div class="g-code">EGM</div><div><h3>Engineers &amp; Geoscientists Manitoba</h3><p>CBA writing services</p><span class="loc">Manitoba, Canada</span></div></div>
+      <div class="g-item"><div class="g-code">APEGS</div><div><h3>Assoc. of Professional Engineers &amp; Geoscientists of Saskatchewan</h3><p>CBA writing services</p><span class="loc">Saskatchewan, Canada</span></div></div>
+      <div class="g-item"><div class="g-code">APEGA</div><div><h3>Assoc. of Professional Engineers &amp; Geoscientists of Alberta</h3><p>CBA writing services</p><span class="loc">Alberta, Canada</span></div></div>
+      <div class="g-item"><div class="g-code">EGBC</div><div><h3>Engineers &amp; Geoscientists British Columbia</h3><p>CBA writing services</p><span class="loc">British Columbia, Canada</span></div></div>
+      <div class="g-item"><div class="g-code">PEO</div><div><h3>Professional Engineers Ontario</h3><p>CBA writing services</p><span class="loc">Ontario, Canada</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>A clear path from first call to finished report.</h2>
+      <p>A simple, transparent process from your first conversation to submission.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Free consultation</h3><p>Tell us your occupation, experience and the assessing body you are targeting.</p></div>
+      <div class="step"><h3>Document review</h3><p>We review your qualifications and work history to plan your report.</p></div>
+      <div class="step"><h3>Report drafting</h3><p>Your technical support specialist prepares the report for your review.</p></div>
+      <div class="step"><h3>Review &amp; finalise</h3><p>You review, request revisions and finalise ahead of submission.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Our local offices spread across the globe.</h2>
+      <p>Reach the office nearest you, message us on WhatsApp, or send an enquiry.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="offices">
+          <div class="office hq">
+            <h3>Corporate Office</h3>
+            <p>Level 8/145 Crown St, Sydney NSW 2000, Australia</p>
+            <p style="margin-top:8px">Email: <a href="mailto:Contact@CDRAustralia.Org">Contact@CDRAustralia.Org</a></p>
+          </div>
+          <div class="office"><h3>Australia</h3><a href="tel:+61291917405">+61 2 9191 7405</a></div>
+          <div class="office"><h3>Canada</h3><a href="tel:+16476009575">+1 647 600 9575</a></div>
+          <div class="office"><h3>New Zealand</h3><a href="tel:+6498879053">+64 9 887 9053</a></div>
+          <div class="office"><h3>India</h3><a href="tel:+919650572343">+91 96505 72343</a></div>
+        </div>
+        <a class="btn wa" href="https://wa.me/61291917405" target="_blank" rel="noopener">WhatsApp: Touch to Chat</a>
+      </div>
+      <script src="https://www.emailmeform.com/builder/forms/jsform/3SOp01XrtfQ5CUbvaks9H" type="text/javascript"></script>
+      <form id="enquiry" onsubmit="sendEnquiry(event)" style="display: none;">
+        <h3>Send an enquiry</h3>
+        <label for="n">Full name</label>
+        <input id="n" required>
+        <label for="e">Email</label>
+        <input id="e" type="email" required>
+        <label for="s">I need help with</label>
+        <select id="s">
+          <option>CDR for Engineers Australia (Migration)</option>
+          <option>ACS Migration Skills Assessment</option>
+          <option>AACA Skills Assessment</option>
+          <option>CPEng / RPEng Accreditation</option>
+          <option>NER / RPEQ / RPEV / NSW &amp; ACT Registration</option>
+          <option>Canada (EGM, APEGS, APEGA, EGBC, PEO)</option>
+          <option>NZ, South Africa, Botswana, PNG or UK</option>
+        </select>
+        <label for="m">Message</label>
+        <textarea id="m" placeholder="Your occupation, years of experience, target timeline..."></textarea>
+        <button class="btn btn-gold" type="submit">Send Enquiry</button>
+        <p class="fine">Opens your email app, addressed to Contact@CDRAustralia.Org</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" style="margin-bottom:14px"><span class="logo-mark"><img src="logo.png" style="max-width: 35px;"></span><span>CDR Australia<small>CDRAustralia.Org</small></span></a>
+        <p>Engineers’ Graded ‘A’ CDR Writing Company. Skills assessment report writing for engineers and ICT professionals.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/cdrhelpaustralia" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/cdraustraliaorg/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://twitter.com/cdraustraliaea" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://www.youtube.com/channel/UCVG8w8aobi4WL3qmhN9bfEw" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://au.linkedin.com/company/cdraustralia-org/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.tiktok.com/@cdraustralia.org" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Migration</a></li>
+          <li><a href="#services">Accreditation</a></li>
+          <li><a href="#services">Registration</a></li>
+          <li><a href="#global">Global Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Level 8/145 Crown St, Sydney NSW 2000</li>
+          <li><a href="mailto:Contact@CDRAustralia.Org">Contact@CDRAustralia.Org</a></li>
+          <li><a href="tel:+61291917405">+61 2 9191 7405 (AU)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">All organisation names and abbreviations mentioned on this site are used to identify the assessment pathways we support. CDR Australia is an independent writing support service. © <span id="y"></span> CDR Australia (CDRAustralia.Org). All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+    t.classList.add('active');
+    document.getElementById(t.dataset.t).classList.add('active');
+  });
+});
+document.querySelectorAll('#menu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')});
+});
+function sendEnquiry(e){
+  e.preventDefault();
+  var b = 'Name: '+document.getElementById('n').value+'\nEmail: '+document.getElementById('e').value+'\nService: '+document.getElementById('s').value+'\n\n'+document.getElementById('m').value;
+  window.location.href = 'mailto:Contact@CDRAustralia.Org?subject='+encodeURIComponent('Website enquiry: '+document.getElementById('s').value)+'&body='+encodeURIComponent(b);
+}
+</script>
+</body>
+</html>
